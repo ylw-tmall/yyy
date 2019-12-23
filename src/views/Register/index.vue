@@ -2,7 +2,7 @@
     <div class="register-box">
         <div class="register">
             <div class="register-logo">
-                <span>logo</span>
+                <img src="/assets/pclogo.png" alt="" width="100%" height="100%">
             </div>
             <div class="register-form-box">
                 <div class="register-form">
@@ -11,7 +11,7 @@
                         <img src="/assets/pic13.png" width="10px" height="13px" alt="">
                         <input type="text"  class="test1" placeholder="请输入手机号" v-model="phone" @blur="checkphone()">
                         <div class="hqyzm" @click="getYanzheng" style="
-                        cursor:pointer">获取验证码</div>
+                        cursor:pointer"><button>获取验证码</button></div>
                     </div>
                     <div class="register-check0">
                         <img src="/assets/pic15.png"  width="10px" height="11px" alt="">
@@ -173,7 +173,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
     .register-box{
         width:100%;
         height:auto;
@@ -185,9 +185,11 @@ export default {
             background-size:cover;
             margin:0 auto;
             .register-logo{
-                width:429px;
-                height:540px;
+                width:71px;
+                height:26px;
                 float: left;
+                margin-top: 251px;
+                margin-left: 243px;
                 span{
                     width:53px;
                     height:26px;
@@ -255,16 +257,19 @@ export default {
                             line-height:24px;
                         }
                         .hqyzm{
-                            width:56px;
                             height:7px;
-                            font-size:7px;
-                            font-family:Microsoft YaHei;
-                            font-weight:400;
-                            color:rgba(255,255,255,1);
-                            line-height:24px;
                             position: relative;
                             bottom: 25px;
                             left: 102px;
+                            button{
+                                background:none;
+                                border:none;
+                                 font-size:3px;
+                                font-family:Microsoft YaHei;
+                                font-weight:400;
+                                color:rgba(255,255,255,1);
+                                line-height:24px;
+                            }
                         }
                     }
                     .register-check0{
@@ -402,6 +407,7 @@ export default {
                                     width:13px;
                                     height:13px;
                                     background:rgba(255,255,255,1);
+                                    border-color: #FE7974;
                                 }
                             //     .mint-checkbox-input:checked + .mint-checkbox-core::after{
                             //         border-color: #FE7974;
@@ -464,6 +470,17 @@ export default {
                 }
             }
         }
+        .mint-checkbox-core::after {
+        border: 2px solid transparent;
+        border-left: 0;
+        border-top: 0;
+        content: " ";
+        top: 1px;
+        left: 4px;
+        position: absolute;
+        width: 4px;
+        height: 8px;
+    }
     }
 </style>
 

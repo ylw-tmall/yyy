@@ -3,14 +3,10 @@
         <!-- <a href="www.4399.com">
             <img src="" width="100%" height="100%" alt="">
         </a> -->
-        
-        <div 
-            v-for="item in adverBanner" :key="item.id">
-                <a :href="item.link_url" >
-                    <img :src="item.avatar"
+                <a :href="adverBanner.link_url" >
+                    <img :src="adverBanner.avatar"
              width="100%" height="100%" alt="">
-                </a>
-        </div>        
+                </a>       
     </div>
 </template>
 <script>
@@ -39,6 +35,7 @@ export default {
         img{
             width:100%;
             height:100%;
+            border-radius:5px;
         }
     }
 </style>

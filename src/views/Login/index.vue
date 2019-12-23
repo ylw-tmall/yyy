@@ -2,7 +2,7 @@
     <div class="login-box">
         <div class="login">
             <div class="login-logo">
-                <span>logo</span>
+                <img src="/assets/pclogo.png" alt="" width="100%" height="100%">
             </div>
             <div class="login-form-box">
                 <div class="login-form">
@@ -110,9 +110,11 @@
             background-size:cover;
             margin:0 auto;
             .login-logo{
-                width:429px;
-                height:540px;
+                width:71px;
+                height:26px;
                 float: left;
+                margin-top: 251px;
+                margin-left: 243px;
                 span{
                     width:53px;
                     height:26px;

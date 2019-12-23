@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style lang="scss">
+.xiaoshuo-box{
+    height:100%;
+
     .tj-box{
              width: 600px;
             height: 40.5px;
@@ -77,7 +80,7 @@ export default {
         }
         .good-list-box{
             width:600px;
-            height:170px;
+            height:100%;
             // background: skyblue;
             margin:0 auto;
             .good-list-bot-top{
@@ -95,5 +98,6 @@ export default {
                 justify-content: space-between;
             }
 
+        }
         }
 </style>

@@ -1,22 +1,22 @@
  <template>
-    <div class="login-box">
-        <div class="login">
-            <div class="login-logo">
-                <span>logo</span>
+    <div class="bindPhone-box">
+        <div class="bindPhone">
+            <div class="bindPhone-logo">
+                <img src="/assets/pclogo.png" alt="" width="100%" height="100%">
             </div>
-            <div class="login-form-box">
-                <div class="login-form">
-                    <div class="login-title"><span>绑定手机号</span></div>
-                    <div class="login-user">
+            <div class="bindPhone-form-box">
+                <div class="bindPhone-form">
+                    <div class="bindPhone-title"><span>绑定手机号</span></div>
+                    <div class="bindPhone-user">
                         <input type="text"  class="test1" placeholder="手机号" v-model="phone">
                         <div class="hqyzm" style="
                         cursor:pointer" @click="getYanzheng">发送验证码</div>
                     </div>
-                    <div class="login-psw">
+                    <div class="bindPhone-psw">
                         <input type="text" class="test1" v-model="code" placeholder="验证码">
                     </div>
                     
-                    <div class="login-btn" @click="bindPhone" style="
+                    <div class="bindPhone-btn" @click="bindPhone" style="
                         cursor:pointer">
                         <span>立即绑定</span>
                     </div>
@@ -54,21 +54,23 @@
         }
     }
 </script>
-<style lang="scss" >
-    .login-box{
+<style lang="scss">
+    .bindPhone-box{
         width:100%;
         height:auto;
         background:#fff;
-        .login{
+        .bindPhone{
             width:960px;
             height:540px;
             background:url("/assets/pic34.png") no-repeat;
             background-size:cover;
             margin:0 auto;
-            .login-logo{
-                width:429px;
-                height:540px;
+            .bindPhone-logo{
+                width:71px;
+                height:26px;
                 float: left;
+                margin-top: 251px;
+                margin-left: 243px;
                 span{
                     width:53px;
                     height:26px;
@@ -82,18 +84,18 @@
                 }
                 
             }
-            .login-form-box{
+            .bindPhone-form-box{
                 width:531px;
                 height:540px;
                 float: right;
-                .login-form{
+                .bindPhone-form{
                     width:395px;
                     height:380px;
                     margin:80.5px 136px 79.5px 0;
                     input{
                         padding-left:10px;
                     }
-                    .login-title{
+                    .bindPhone-title{
                             width:70px;
                             height:12px;
                             margin:139px 221.5px 334.5px 148.5px;
@@ -110,7 +112,7 @@
                             left:0;
                         }
                     }
-                    .login-user{
+                    .bindPhone-user{
                         width:156px;
                         height:20px;
                         position: relative;
@@ -151,7 +153,7 @@
                         }
                 
                     }
-                    .login-psw{
+                    .bindPhone-psw{
                         width:156px;
                         height:20px;
                         position: relative;
@@ -178,7 +180,7 @@
                             line-height:24px;
                 }
                     }
-                    .login-btn{
+                    .bindPhone-btn{
                         width:155px;
                         height:25px;
                         background:rgba(255,255,255,1);

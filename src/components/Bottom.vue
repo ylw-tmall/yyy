@@ -6,11 +6,17 @@
                   <ul class="text">
                       <li>
                           <a href="">用户协议</a>
-                          <a href="">作者招募</a>
                           <a href="">联系我们</a>
+                          <a href="">社区规范</a>
                       </li>
                       <li>
                           <a href="">品牌合作</a>
+                          <a href="">隐私条款</a>
+                          <a href="">相关许可证</a>
+                      </li>
+                      <li>
+                          <a href="">作者招募</a>
+                          <a href="">版权信息</a>
                           <a href="">使用帮助</a>
                       </li>
                   </ul>
@@ -53,7 +59,6 @@ export default {
         .bottom{
             width:600px;
             height:136px;
-          
             margin:0 auto;
             .bottom-top{
                 width:600px;
@@ -121,7 +126,7 @@ export default {
                            width:53px;
                             height:77.5px;
                                float: right;
-                               margin-right:62px;
+                               margin-right:37px;
                                margin-top:27.5px;
                             .erweima2{
                                 width: 53px;

@@ -89,7 +89,7 @@ export default {
             .good-text-box{
                 width:210px;
                 height:110px;
-                float: right;
+                // float: right;
                 .good-title{
                     font-size:8px;
                     font-family:Microsoft YaHei;

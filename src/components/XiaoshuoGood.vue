@@ -1,6 +1,7 @@
 <template>
-    <div class="XiaoshuoGood">
-        <div  v-for="item in wonderful" :key="item.id">
+<div >
+    <div class="XiaoshuoGood"  v-for="item in wonderful" :key="item.id">
+        
         <div class="XiaoshuoGood-top">
             <div class="top-left">
                 <img :src="item.cover_img" alt="" width="100%" height="100%">
@@ -104,6 +105,9 @@ export default {
                     font-weight:400;
                     color:rgba(0,0,0,1);
                     margin-left:2px;
+                      overflow:hidden;
+                    text-overflow: ellipsis;
+                    white-space:nowrap;
                   
                 }
                 .text{

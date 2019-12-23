@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <Tabtop></Tabtop>
+        <HomeTabtop></HomeTabtop>
             <div v-if="mainBanner.length != 0">
                 <Banner :mainBanner="mainBanner"></Banner>
             </div> 
@@ -23,9 +23,9 @@
                 <BannerOne :adverBanner="adverBanner[2]"></BannerOne>
             </div> 
         <!-- <Recommend :title="title[3]"></Recommend> -->
-        <Xiaoshuo :title="title[3]"></Xiaoshuo>
-            <BannerOne :adverBanner="adverBanner[3]"></BannerOne>
-        <Bottom></Bottom>     
+            <Xiaoshuo :title="title[3]"></Xiaoshuo>
+            <BannerOne :adverBanner="adverBanner[3]" style="margin-top:270px"></BannerOne>
+            <Bottom></Bottom>     
     </div> 
 </template>
 <script>
@@ -33,7 +33,7 @@ import Banner from "@/components/IndexBanner"
 import Recommend from "@/components/Recommend"
 import BannerOne from "@/components/Banner"
 import Bottom from "@/components/Bottom"
-import Tabtop from "@/components/Tabtop"
+import HomeTabtop from "@/components/HomeTabtop"
 import Xiaoshuo from "@/components/Xiaoshuo"
 import axios from 'axios'
 export default {
@@ -50,7 +50,7 @@ export default {
         },
         
     components:{
-        Banner,Recommend,BannerOne,Bottom,Tabtop,Xiaoshuo
+        Banner,Recommend,BannerOne,Bottom,HomeTabtop,Xiaoshuo
     },
     created(){
         this.$http.get('http://10.0.1.46/laravel/public/api/homeIndex',{

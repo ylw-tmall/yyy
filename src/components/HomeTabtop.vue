@@ -1,6 +1,9 @@
 <template>
     <div class="tab-top">
         <div class="header">
+                <div class="logo-box">
+                    <img src="/assets/pclogo.png" alt="" width="100%" height="100%">
+                </div>
                 <div class="nav-box">
                     <router-link to="/home" active-class="active">首页</router-link>
                     <router-link to="/video" active-class="active" id="video">视频</router-link>

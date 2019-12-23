@@ -1,28 +1,28 @@
  <template>
-    <div class="login-box">
-        <div class="login">
-            <div class="login-logo">
-                <span>logo</span>
+    <div class="findPsw-box">
+        <div class="findPsw">
+            <div class="findPsw-logo">
+                <img src="/assets/pclogo.png" alt="" width="100%" height="100%">
             </div>
-            <div class="login-form-box">
-                <div class="login-form">
-                    <div class="login-title"><span>找回密码</span></div>
-                    <div class="login-user">
+            <div class="findPsw-form-box">
+                <div class="findPsw-form">
+                    <div class="findPsw-title"><span>找回密码</span></div>
+                    <div class="findPsw-user">
                         <input type="text"  class="test1" placeholder="  手机号" v-model="phone">
                         <div class="hqyzm" style="
                         cursor:pointer"  @click="getYanzheng">发送验证码</div>
                     </div>
-                    <div class="login-psw">
+                    <div class="findPsw-psw">
                         <input type="text" class="test1" placeholder="   验证码" v-model="code">
                     </div>
                     
-                    <div class="login-check" >
+                    <div class="findPsw-check" >
                         <input  type="text" class="test1"  placeholder="  密码" v-model="password">
                     </div>
-                     <div class="login-true-check" >
+                     <div class="findPsw-true-check" >
                         <input  type="text" class="test1"  placeholder="  确认密码" v-model="repassword">
                     </div>
-                    <div class="login-btn" @click="findPassword" style="
+                    <div class="findPsw-btn" @click="findPassword" style="
                         cursor:pointer">
                         <span >完成</span>
                     </div>
@@ -54,7 +54,7 @@
           })    
         },
          getYanzheng(){
-          this.$http("https://yapi.zhoushijt.com/mock/65/api/sendCode",{
+          this.$http("http://10.0.1.46/laravel/public/api/sendCode",{
               phone:this.phone,
               type:1
           }).then(res => {
@@ -65,20 +65,22 @@
     }
 </script>
 <style lang="scss">
-    .login-box{
+    .findPsw-box{
         width:100%;
         height:auto;
         background:#fff;
-        .login{
+        .findPsw{
             width:960px;
             height:540px;
             background:url("/assets/pic34.png") no-repeat;
             background-size:cover;
             margin:0 auto;
-            .login-logo{
-                width:429px;
-                height:540px;
+            .findPsw-logo{
+                 width:71px;
+                height:26px;
                 float: left;
+                margin-top: 251px;
+                margin-left: 243px;
                 span{
                     width:53px;
                     height:26px;
@@ -92,15 +94,15 @@
                 }
                 
             }
-            .login-form-box{
+            .findPsw-form-box{
                 width:531px;
                 height:540px;
                 float: right;
-                .login-form{
+                .findPsw-form{
                     width:395px;
                     height:380px;
                     margin:80.5px 136px 79.5px 0;
-                    .login-title{
+                    .findPsw-title{
                             width:60px;
                             height:12px;
                             margin:34px 221.5px 334.5px 148.5px;
@@ -117,7 +119,7 @@
                             left:0;
                         }
                     }
-                    .login-user{
+                    .findPsw-user{
                         width:156px;
                         height:20px;
                         position: relative;
@@ -158,7 +160,7 @@
                         }
                 
                     }
-                    .login-psw{
+                    .findPsw-psw{
                         width:156px;
                         height:20px;
                         position: relative;
@@ -185,7 +187,7 @@
                             line-height:24px;
                 }
                     }
-                    .login-check{
+                    .findPsw-check{
                         width:156px;
                         height:54px;
                         position: relative;
@@ -213,7 +215,7 @@
                         }
 
                     }
-                    .login-true-check{
+                    .findPsw-true-check{
                         width:156px;
                         height:54px;
                         position: relative;
@@ -240,7 +242,7 @@
                             line-height:24px;
                         }
                     }
-                    .login-btn{
+                    .findPsw-btn{
                         width:155px;
                         height:25px;
                         background:rgba(255,255,255,1);
