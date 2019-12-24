@@ -30,7 +30,8 @@ export default {
             labelList:[],
             area:[],
             advert:[],
-            reData:[]
+            reData:[],
+            documentList:[]
        }
    },
    created(){
@@ -42,12 +43,23 @@ export default {
             this.typeList=res.data.reData.typeList;
             this.labelList=res.data.reData.labelList;
             this.area =res.data.reData.area;
-            this.advert = res.data.reData.advert;
-            
+            this.advert = res.data.reData.advert;   
+          }).catch(err => {                 //请求失败后的处理函数   
+            console.log(err)
+          }),
+          this.$http.get('http://10.0.1.46/laravel/public/api/documentList',{
+            params: {  
+             document_type:1,
+             user_id:9,
+             token:"397F806FA81B20D92D20E86B08D43798",                 //参数
+            },
+        }).then(res => { 
+            this.documentList = res.data;
+            console.log(this.documentList)   
           }).catch(err => {                 //请求失败后的处理函数   
             console.log(err)
           })
-      }  
+   }
 }
 </script>
 <style lang="scss" scoped>

@@ -46,7 +46,7 @@
             getYanzheng(){
                 this.$http("http://10.0.1.46/laravel/public/api/sendCode",{
                     phone:this.phone,
-                    type:1
+                    type:2
                 }).then(res => {
                     console.log(res.data.reData)
                 })

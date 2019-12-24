@@ -44,8 +44,7 @@
                         cursor:pointer" >立即注册</span>
                     </div>
                     <div class="go-login">
-                        <router-link to="./login"><a href="" id="a1" style="text-decoration:none;">已有账号,去登录</a></router-link>
-                        
+                        <router-link to="./login"><a href="" id="a1" style="text-decoration:none;">已有账号,去登录</a></router-link>  
                     </div>      
                 </div>
             </div>
@@ -71,7 +70,7 @@ export default {
             code:"",
             password:"",
             repassword:"",
-            pcode:"",
+            pcode:""
       }
   },
    components:{
@@ -82,23 +81,41 @@ export default {
    },
    methods:{
       regist:function(){
-          this.$http("http://10.0.1.46/laravel/public/api/register",{
-            phone:this.phone,
-            code:this.code,
-            password:md5(this.password),
-            repassword:md5(this.repassword),
-            pcode:this.pcode
+          this.$http.get("http://10.0.1.46/laravel/public/api/register",{
+              params:{
+                  reData:[
+                      {
+                phone:"",
+                code:"",
+                password:"",
+                repassword:"",
+                pcode:""
+
+                      }
+                  ]
+              },
           }).then(res =>{
-              console.log(res.data.message);
-              
+                // phone=this.mine.phone,
+                // code=this.mine.code,
+                // password=md5(this.mine.password),
+                // repassword=md5(this.mine.repassword),
+                // pcode=this.mine.pcode
+                // console.log(res.data.message);
           })
+               this.$http.post(('http://10.0.1.46/laravel/public/api/register'),this.reData,{emulateJSON:false}).then(response => {
+        　　　　　　console.log(this.reData);
+        // 　　　　　　this.grouplist = response.body;
+                })
       },
       getYanzheng(){
-          this.$http("http://10.0.1.46/laravel/public/api/sendCode",{
-              phone:this.phone,
+          this.$http.get("http://10.0.1.46/laravel/public/api/sendCode",{
+              params:{
+              phone:17852233308,
               type:1
+              },
           }).then(res => {
-              console.log(res.data.reData)
+              this.code1=res.data.reData
+              console.log(this.code1)
           })
       },
       //验证手机号
@@ -115,7 +132,7 @@ export default {
         checkLpicma(){   
           if(this.code == '') {
            console.log('验证码不能为空'); 
-          }else if(this.code != this.code ) { 
+          }else if(this.code != this.code1 ) { 
            alert('验证码输入错误'); 
            this.code = '';
           }else {
@@ -151,7 +168,7 @@ export default {
             },
         //确认密码验证
         passwordCheckValidate: function() {
-        if(this.repassword = " ") {
+        if(this.repassword == " ") {
             console.log('密码不能为空')
         }else if(this.repassword==this.password ){
             console.log('两次密码匹配')

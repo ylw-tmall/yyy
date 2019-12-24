@@ -65,7 +65,7 @@ export default {
                 height:100px;
             
                 .left{
-                    width:312px;
+                    width:350px;
                     height:73.5px;
                     float: left;
                     ul{

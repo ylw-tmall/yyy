@@ -1,36 +1,40 @@
 <template>
     <div class="home">
-        <HomeTabtop></HomeTabtop>
+            <HomeTabtop></HomeTabtop>
             <div v-if="mainBanner.length != 0">
                 <Banner :mainBanner="mainBanner"></Banner>
             </div> 
             <div v-if="mainBanner.length != 0"> 
-                <Recommend :title="title[0]"></Recommend>
+                <Recommend :title="title[0]" :recommend="recommend"></Recommend>
             </div> 
             <div v-if="mainBanner.length != 0">
                 <BannerOne :adverBanner="adverBanner[0]"></BannerOne>
             </div>  
             <div v-if="mainBanner.length != 0"> 
-                <Recommend :title="title[1]"></Recommend>
+                <New :title="title[1]" :zuixin="zuixin" ></New>
             </div>
             <div v-if="mainBanner.length != 0">
                 <BannerOne :adverBanner="adverBanner[1]"></BannerOne>
             </div>  
             <div v-if="mainBanner.length != 0"> 
-                <Recommend :title="title[2]"></Recommend>
+                <Love :title="title[2]" :like="like"></Love>
              </div>
              <div v-if="mainBanner.length != 0">
                 <BannerOne :adverBanner="adverBanner[2]"></BannerOne>
             </div> 
-        <!-- <Recommend :title="title[3]"></Recommend> -->
-            <Xiaoshuo :title="title[3]"></Xiaoshuo>
-            <BannerOne :adverBanner="adverBanner[3]" style="margin-top:270px"></BannerOne>
+             <div v-if="mainBanner.length != 0">
+            <Jingcai :title="title[3]" :wonderful="wonderful"></Jingcai>
+            </div> 
+            <BannerOne :adverBanner="adverBanner[3]"></BannerOne>
             <Bottom></Bottom>     
     </div> 
 </template>
 <script>
 import Banner from "@/components/IndexBanner"
 import Recommend from "@/components/Recommend"
+import New from "@/components/New"
+import Love from "@/components/Love"
+import Jingcai from "@/components/Jingcai"
 import BannerOne from "@/components/Banner"
 import Bottom from "@/components/Bottom"
 import HomeTabtop from "@/components/HomeTabtop"
@@ -43,14 +47,13 @@ export default {
             mainBanner:[],
             adverBanner:[],
             recommend:[],
-            new:[],
+            zuixin:[],
             like:[],
             wonderful:[]   
         }
-        },
-        
+        },  
     components:{
-        Banner,Recommend,BannerOne,Bottom,HomeTabtop,Xiaoshuo
+        Banner,Recommend,BannerOne,Bottom,HomeTabtop,Xiaoshuo,New,Love,Jingcai
     },
     created(){
         this.$http.get('http://10.0.1.46/laravel/public/api/homeIndex',{
@@ -61,17 +64,17 @@ export default {
         }).then(res => {                   //请求成功后的处理函数     
             this.mainBanner=res.data.reData.banner;
             this.adverBanner=res.data.reData.advert;
-            // console.log(this.adverBanner[0].id)
-            //  this.new.push(res.data.reData.new);
-            // this.wonderful.push(res.data.reData.wonderful);
-            // this.like.push(res.data.reData.like);
+            this.recommend=res.data.reData.recommend;
+            this.zuixin=res.data.reData.new;
+             this.like=res.data.reData.like;
+             this.wonderful=res.data.reData.wonderful;
+            console.log(this.new)
           }).catch(err => {                 //请求失败后的处理函数   
             console.log(err)
           })
       }
 }
 </script>
-
 <style lang="scss" scoped>
     .home{
         height:100%;

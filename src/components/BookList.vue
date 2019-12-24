@@ -1,6 +1,7 @@
 <template>
-    <div class="BookList-box">
-        <div class="good-box" v-for="item in recommend" :key="item.id">
+<div>
+    <div class="BookList-box" v-for="item in recommend" :key="item.id">
+        <div class="good-box" >
             <router-link :to="{path:'/bookDetails',query:{id:item.id}}">
                 <div class="good-img-box">
                     <img :src="item.cover_img" alt="" width="100%" height="100%">
@@ -23,6 +24,8 @@
                 </div>
             </div>
         </div> 
+</div>
+    
     </div>
 </template>
 <script>

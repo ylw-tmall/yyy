@@ -1,10 +1,17 @@
 <template>
     <div class="Box">
-
-   
-    <div class="XiaoshuoGood"  v-for="item in wonderful" :key="item.id">
-        
-        <div class="XiaoshuoGood-top">
+        <div class="tj-box" >
+            <div class="left"></div>
+            <div class="center">
+                <span style="width:48px">{{title}}</span>
+            </div>
+            <div class="right">
+                <a href="">更多 ></a>
+            </div>
+        </div>
+        <div class="jincaiBox">
+            <div class="jingcai"  v-for="item in wonderful" :key="item.id">
+        <div class="jingcai-top">
             <div class="top-left">
                 <img :src="item.cover_img" alt="" width="100%" height="100%">
             </div>
@@ -18,46 +25,29 @@
             </div>
         </div>
         <div class="good-bottom">
-                        <div class="head-img">
-                            <img :src="item.avatar" alt="">
-                        </div>
-                        <!-- <div class="zan" ref="zan" @click="changeZan">
-                        </div> -->
-                        <img src="/assets/pic11.png" alt="" class="zan" @click="flagZan=!flagZan" v-if="flagZan">
-                            <img src="/assets/pic8.png" alt="" class="zan" @click="flagZan=!flagZan" v-else>
-                        <span>{{item.like_num}}</span>
-                        <div class="glasses">
-                        </div>
-                        <span>{{item.look_num}}</span>
-                    </div>
-                </div>
-                 </div>
+            <div class="head-img">
+                <img :src="item.avatar" alt="">
+            </div>
+            <!-- <div class="zan" ref="zan" @click="changeZan">
+            </div> -->
+            <img src="/assets/pic11.png" alt="" class="zan" @click="flagZan=!flagZan" v-if="flagZan">
+            <img src="/assets/pic8.png" alt="" class="zan" @click="flagZan=!flagZan" v-else>
+            <span>{{item.like_num}}</span>
+            <div class="glasses"></div>
+            <span>{{item.look_num}}</span>
+        </div>
+    </div>
+    </div>
+</div>
 </template>
-
 <script>
 export default {
-      data(){
+    data(){
         return {
             flagZan : false,
-            wonderful:[],
-            type:3
         }
     },
-    created(){
-        this.$http.get('http://10.0.1.46/laravel/public/api/homeIndex',{
-            params: {  
-              user_id:9,                         //参数
-              token:"397F806FA81B20D92D20E86B08D43798",
-              type:""
-            },
-        }).then(res => {         
-                   //请求成功后的处理函数     
-            this.wonderful=res.data.reData.wonderful;
-            // console.log(this.wonderful)
-          }).catch(err => {                 //请求失败后的处理函数   
-            console.log(err)
-          })
-      },
+    props:["wonderful","title"],
     methods:{
         changeZan(){
             if(!this.flagZan){
@@ -71,17 +61,68 @@ export default {
             }           
         },   
     }
-
 }
 </script>
 <style lang="scss">
-// .Box{
-    // width:600px;
-    // display: flex;
-    .XiaoshuoGood{
+.Box{
+    width:600px;
+    margin:0 auto;
+    .tj-box{
+             width: 600px;
+            height: 40.5px;
+            background:rgba(250,250,250,1);
+            margin-top: 15px;    
+         
+            .left{
+                width:1.5px;
+                height:11px;
+                 background:#FF0000;
+                position: relative;
+                top: 18px;
+                left: 0;
+            } 
+            .center{
+                width:21.5px;
+                height:10.5px;
+                span{
+                    display: block;
+                    height:10.5px;
+                    font-size:10px;
+                    font-family:Microsoft YaHei;
+                    font-weight:400;
+                    color:rgba(0,0,0,1);
+                    line-height:24px;
+                    margin-left:4.5px;
+                }
+            }
+            .right{
+                float:right;
+              
+                a{
+                    text-decoration: none;
+                    font-size:7px;
+                    font-family:Microsoft YaHei;
+                    font-weight:400;
+                    color:rgba(102,102,102,1);
+                    line-height:24px;
+                }
+            }
+            
+        }
+        .jincaiBox{
+            width: 600px;
+             height:100%;
+             background:rgba(250,250,250,1);
+             margin-top:3px;
+            flex-wrap: wrap;
+            display: flex; 
+            margin: 0 auto;
+            justify-content: space-between;
+            .jingcai{
           width:112px;
         margin-top:15px;
-        .XiaoshuoGood-top{
+        
+        .jingcai-top{
             width:112px;
             height:55px;
             background:rgba(255,255,255,1);
@@ -178,5 +219,7 @@ export default {
             }
         }
     }
+        }
     
+}  
 </style>

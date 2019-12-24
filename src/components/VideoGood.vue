@@ -34,21 +34,21 @@ export default {
             recommend:[]
         }
     },
-    created(){
-        this.$http.get('http://10.0.1.46/laravel/public/api/homeIndex',{
-            params: {  
-              user_id:9,                         //参数
-              token:"397F806FA81B20D92D20E86B08D43798",
-              type:1,
-              id:1
-            },
-        }).then(res => {                   //请求成功后的处理函数     
-         this.recommend=res.data.reData.recommend;
-        //  console.log(this.recommend[0].id)
-          }).catch(err => {                 //请求失败后的处理函数   
-            console.log(err)
-          })
-      },
+    // created(){
+    //     this.$http.get('http://10.0.1.46/laravel/public/api/homeIndex',{
+    //         params: {  
+    //           user_id:9,                         //参数
+    //           token:"397F806FA81B20D92D20E86B08D43798",
+    //           type:1,
+    //           id:1
+    //         },
+    //     }).then(res => {                   //请求成功后的处理函数     
+    //      this.recommend=res.data.reData.recommend;
+    //     //  console.log(this.recommend[0].id)
+    //       }).catch(err => {                 //请求失败后的处理函数   
+    //         console.log(err)
+    //       })
+    //   },
     methods:{
         changeZan(){
             if(!this.flagZan){

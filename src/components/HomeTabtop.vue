@@ -83,7 +83,7 @@ export default {
             width:170px;
             height:23px;
             float: left;
-            margin-left:31px;
+            margin-left:8px;
             border:1px solid rgba(255,0,0,1);
             margin-top: 5px;
             padding-left: 8px;

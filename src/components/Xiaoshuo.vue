@@ -3,38 +3,40 @@
         <div class="tj-box">
             <div class="left"></div>
             <div class="center">
-                    <span style="width:48px">{{title}}</span>
+                <span style="width:48px">{{title}}</span>
             </div>
             <div class="right">
                 <a href="">更多 ></a>
             </div>
         </div>
-        <div class="good-list-box">
-            <div class="good-list-bot-top">
+            <div class="good-list-bot-top" style="margin:0 auto; display:flex; width:600px;justify-content: space-around;"  >
                 <XiaoshuoGood></XiaoshuoGood>
                 <XiaoshuoGood></XiaoshuoGood>
                 <XiaoshuoGood></XiaoshuoGood>
                 <XiaoshuoGood></XiaoshuoGood>
-                <XiaoshuoGood></XiaoshuoGood>
-            </div>    
+                <XiaoshuoGood></XiaoshuoGood> 
         </div>
     </div>
 </template>
-
 <script>
 import XiaoshuoGood from "./XiaoshuoGood"
 export default {
+    data(){
+        return{          
+        }
+    },
     components:{
         XiaoshuoGood
     },
-    props:["title"]
+    props:["title"],
 }
 </script>
 
 <style lang="scss">
 .xiaoshuo-box{
+    width:600px;
     height:100%;
-
+    margin:0 auto;    
     .tj-box{
              width: 600px;
             height: 40.5px;
@@ -77,8 +79,8 @@ export default {
                 }
             }
             
-        }
-        .good-list-box{
+    }
+    .good-list-box{
             width:600px;
             height:100%;
             // background: skyblue;
@@ -88,16 +90,15 @@ export default {
                 height:85px;
                 // background:red;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
+                
             }
-              .good-list-bot-bot{
+            .good-list-bot-bot{
                 width:600px;
                 height:85px;
-                // background:green;
-                display: flex;
-                justify-content: space-between;
+                // background:green; 
+                // justify-content: space-between;
             }
-
-        }
-        }
+    }
+}
 </style>
